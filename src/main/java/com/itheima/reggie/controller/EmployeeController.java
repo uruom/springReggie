@@ -132,12 +132,14 @@ public class EmployeeController {
      * @return
      */
     @PutMapping
+//    @PostMapping
     public R<String> update(HttpServletRequest request,@RequestBody Employee employee){
         log.info(employee.toString());
 //        Long empId = (Long) request.getSession().getAttribute("employee");
 //        employee.setUpdateUser(empId);
 //        employee.setUpdateTime(LocalDateTime.now());
         employService.updateById(employee);
+        log.error("调用！！");
         return R.success("员工信息修改成功");
     }
 
